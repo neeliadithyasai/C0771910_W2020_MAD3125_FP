@@ -1,7 +1,7 @@
 package com.example.c0771910_w2020_mad3125_fp.classes;
 
 
-public class Bill implements Idisplay {
+public abstract class Bill implements Idisplay {
 
 
     private String billId;
