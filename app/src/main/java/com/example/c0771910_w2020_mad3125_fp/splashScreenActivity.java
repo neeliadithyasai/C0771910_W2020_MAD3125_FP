@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
+import com.example.c0771910_w2020_mad3125_fp.ui.loginActivity;
+
 public class splashScreenActivity extends AppCompatActivity {
 
 

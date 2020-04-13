@@ -1,4 +1,4 @@
-package com.example.c0771910_w2020_mad3125_fp;
+package com.example.c0771910_w2020_mad3125_fp.ui;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,10 +9,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.c0771910_w2020_mad3125_fp.R;
 
 public class loginActivity extends AppCompatActivity {
 
