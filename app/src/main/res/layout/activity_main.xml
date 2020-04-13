@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_dark"
     android:orientation="vertical"
-    tools:context=".splashScreenActivity" >
+    tools:context=".splashScreenActivity">
 
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="match_parent"
         android:layout_height="257dp"
         android:layout_marginTop="80dp"
-        android:src="@drawable/wallet"/>
+        android:src="@drawable/wallet" />
 
     <TextView
         android:id="@+id/textView"
