@@ -7,11 +7,29 @@
     android:orientation="vertical"
     tools:context=".splashScreenActivity" >
 
-    <ImageView
-        android:id="@+id/imageView"
+    <pl.droidsonroids.gif.GifImageView
         android:layout_width="match_parent"
-        android:layout_height="238dp"
-        android:layout_marginTop="100dp"
-        app:srcCompat="@drawable/wallet"
-        tools:src="@tools:sample/avatars" />
+        android:layout_height="257dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/wallet"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="C0771910"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Adithya Sai Neeli"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp" />
 </LinearLayout>
