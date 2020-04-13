@@ -1,4 +1,4 @@
-package com.example.c0771910_w2020_mad3125_fp;
+package com.example.c0771910_w2020_mad3125_fp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
-import com.example.c0771910_w2020_mad3125_fp.ui.loginActivity;
+import com.example.c0771910_w2020_mad3125_fp.R;
 
 public class splashScreenActivity extends AppCompatActivity {
 
