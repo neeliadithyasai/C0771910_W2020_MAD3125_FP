@@ -95,6 +95,8 @@ public class loginActivity extends AppCompatActivity {
                 loginPrefsEditor.commit();
 
             } else {
+                username.setText("");
+                password.setText("");
                 loginPrefsEditor.clear();
                 loginPrefsEditor.commit();
             }
@@ -109,8 +111,8 @@ public class loginActivity extends AppCompatActivity {
                     .setMessage("enter valid username and password")
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                           username.clearComposingText();
-                           password.clearComposingText();
+                           username.setText("");
+                           password.setText("");
                         }
                     })
 
