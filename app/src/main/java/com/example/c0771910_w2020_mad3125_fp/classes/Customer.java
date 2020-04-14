@@ -21,4 +21,44 @@ public class Customer implements Idisplay{
     public void print() {
 
     }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+    public Dictionary<String, Bill> getCustomerBills() {
+        return customerBills;
+    }
+
+    public void setCustomerBills(Dictionary<String, Bill> customerBills) {
+        this.customerBills = customerBills;
+    }
 }
