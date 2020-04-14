@@ -10,19 +10,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.c0771910_w2020_mad3125_fp.R;
-import com.example.c0771910_w2020_mad3125_fp.classes.Customer;
+import com.example.c0771910_w2020_mad3125_fp.model.Customer;
+import com.example.c0771910_w2020_mad3125_fp.util.DataManager;
 
 import java.util.ArrayList;
 
 public class customerAdapter extends RecyclerView.Adapter<customerAdapter.customerViewholder> {
 
-    ArrayList<Customer> customersArrayList;
-    private Context mContext;
-
-    public customerAdapter(ArrayList<Customer> customersArrayList,Context mContext) {
-        this.customersArrayList = customersArrayList;
-        this.mContext = mContext;
-    }
+//    ArrayList<Customer> customersArrayList;
+//    private Context mContext;
+//
+//    public customerAdapter(ArrayList<Customer> customersArrayList,Context mContext) {
+//        this.customersArrayList = customersArrayList;
+//        this.mContext = mContext;
+//    }
 
     @NonNull
     @Override
@@ -35,14 +36,24 @@ public class customerAdapter extends RecyclerView.Adapter<customerAdapter.custom
     @Override
     public void onBindViewHolder(@NonNull final customerAdapter.customerViewholder holder, int position)
     {
-        Customer mcustomer = this.customersArrayList.get(position);
+        Customer mcustomer = DataManager.getInstance().getCustomers().get(position);
         holder.txtCustomername.setText(mcustomer.getFirstName());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+
+
+
+            }
+        });
 
     }
 
     @Override
     public int getItemCount() {
-        return this.customersArrayList.size();
+        return DataManager.getInstance().getCustomers().size();
     }
 
     public class customerViewholder extends RecyclerView.ViewHolder {

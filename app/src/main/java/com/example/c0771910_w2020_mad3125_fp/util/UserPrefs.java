@@ -1,7 +1,9 @@
-package com.example.c0771910_w2020_mad3125_fp.classes;
+package com.example.c0771910_w2020_mad3125_fp.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
+import com.example.c0771910_w2020_mad3125_fp.model.Customer;
 
 public class UserPrefs {
     /** This application's preferences label */
@@ -13,6 +15,7 @@ public class UserPrefs {
     private static final String KEY_firstName = "com.our.package.KEY_firstName";
     private static final String KEY_LastName = "com.our.package.KEY_LastName";
     private static final String KEY_emailId = "com.our.package.KEY_emailId";
+    private static final String KEY_customerBills = "com.our.package.KEY_customerBills";
 
 
     /** This application's preferences */
@@ -54,7 +57,6 @@ public class UserPrefs {
         editor.putString(
                 getFieldKey(id, KEY_emailId),
                 customer.getEmailId() );
-
         editor.commit();
     }
     /** Retrieve */

@@ -1,4 +1,4 @@
-package com.example.c0771910_w2020_mad3125_fp.classes;
+package com.example.c0771910_w2020_mad3125_fp.model;
 
 public class Hydro extends Bill {
 

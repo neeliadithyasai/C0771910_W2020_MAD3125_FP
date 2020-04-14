@@ -5,12 +5,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
 import com.example.c0771910_w2020_mad3125_fp.R;
 import com.example.c0771910_w2020_mad3125_fp.adapters.customerAdapter;
-import com.example.c0771910_w2020_mad3125_fp.classes.Customer;
-import com.example.c0771910_w2020_mad3125_fp.classes.UserPrefs;
+import com.example.c0771910_w2020_mad3125_fp.model.Customer;
+import com.example.c0771910_w2020_mad3125_fp.util.DataManager;
+import com.example.c0771910_w2020_mad3125_fp.util.UserPrefs;
 
 import java.util.ArrayList;
 
@@ -31,13 +31,19 @@ public class homeActivity extends AppCompatActivity {
         populateCustomers();
 
 
-        customerAdapter = new customerAdapter(customersLIST,this);
+        customerAdapter = new customerAdapter();
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         rVCustomersList.setLayoutManager(mLayoutManager);
         rVCustomersList.setAdapter(customerAdapter);
 
 
     }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+    }
+
 
     private void populateCustomers() {
 
@@ -61,6 +67,7 @@ public class homeActivity extends AppCompatActivity {
         customer2.setEmailId("kulkarninikhil@gmail.com");
 
 
+
         // save
         prefs.setUser(customer1);
         // ...or delete
@@ -72,6 +79,11 @@ public class homeActivity extends AppCompatActivity {
         customersLIST.add(new Customer("c002","Adithya","sai","as@gmail.com"));
         customersLIST.add(customer1);
         customersLIST.add(customer2);
+
+
+
+
+
 
     }
 }
