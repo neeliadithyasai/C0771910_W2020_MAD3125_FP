@@ -1,7 +1,9 @@
 package com.example.c0771910_w2020_mad3125_fp.model;
 
 
-public abstract class Bill implements Idisplay {
+import java.io.Serializable;
+
+public abstract class Bill implements Idisplay, Serializable {
 
 
     private String billId;
@@ -19,5 +21,37 @@ public abstract class Bill implements Idisplay {
     @Override
     public void print() {
 
+    }
+
+    public String getBillId() {
+        return billId;
+    }
+
+    public void setBillId(String billId) {
+        this.billId = billId;
+    }
+
+    public String getBillDate() {
+        return billDate;
+    }
+
+    public void setBillDate(String billDate) {
+        this.billDate = billDate;
+    }
+
+    public String getBillType() {
+        return billType;
+    }
+
+    public void setBillType(String billType) {
+        this.billType = billType;
+    }
+
+    public Double getBillAmount() {
+        return billAmount;
+    }
+
+    public void setBillAmount(Double billAmount) {
+        this.billAmount = billAmount;
     }
 }
