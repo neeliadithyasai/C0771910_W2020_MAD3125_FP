@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.detailsDisplayActivity">
 
-    <TextView
-        android:id="@+id/dddisplay"
-        android:layout_width="337dp"
-        android:layout_height="524dp"
-        android:text="TextView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBillsList"
+        android:layout_width="403dp"
+        android:layout_height="589dp"
+        android:layout_marginTop="142dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
