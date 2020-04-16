@@ -15,6 +15,7 @@ import com.example.c0771910_w2020_mad3125_fp.R;
 import com.example.c0771910_w2020_mad3125_fp.adapters.billsAdapter;
 import com.example.c0771910_w2020_mad3125_fp.model.Bill;
 import com.example.c0771910_w2020_mad3125_fp.model.Customer;
+import com.example.c0771910_w2020_mad3125_fp.util.DataManager;
 
 import java.util.ArrayList;
 
@@ -39,6 +40,7 @@ public class detailsDisplayActivity extends AppCompatActivity {
         Customer customerObj = mIntent.getParcelableExtra("CustomerOBJ");
         billsArrayList = customerObj.getBills();
 
+
         rvBillsList = findViewById(R.id.rvBillsList);
         CustId = findViewById(R.id.txtCustomerId);
         custName = findViewById(R.id.txtCustomerName);
@@ -50,6 +52,21 @@ public class detailsDisplayActivity extends AppCompatActivity {
         custEmailId.setText(customerObj.getEmailId());
         custTotal.setText(String.valueOf(customerObj.getTotalAmount()));
 
+        fillData();
+
+
+
+
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        fillData();
+
+    }
+
+
+    private void fillData() {
         BillsAdapter = new billsAdapter(this.billsArrayList);
 
 
@@ -59,8 +76,10 @@ public class detailsDisplayActivity extends AppCompatActivity {
         rvBillsList.setAdapter(BillsAdapter);
 
 
-
     }
+
+
+
     public ArrayList<Bill> getBillsArrayList()
     {
         return this.billsArrayList;
@@ -77,7 +96,10 @@ public class detailsDisplayActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.menu3:
+                Intent mIntent = getIntent();
+                Customer customerObj = mIntent.getParcelableExtra("CustomerOBJ");
                 Intent intent3 = new Intent(detailsDisplayActivity.this, addBillActivity.class);
+                intent3.putExtra("CustomerOBJ",customerObj);
                 startActivity(intent3);
 
                 return true;
