@@ -29,17 +29,25 @@ public class homeActivity extends AppCompatActivity {
         ActionBar mActionBar = getSupportActionBar();
         mActionBar.setTitle("Customers");
 
-        rVCustomersList = findViewById(R.id.rvCustomerList);
-        customerAdapter = new customerAdapter();
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
-        rVCustomersList.setLayoutManager(mLayoutManager);
-        rVCustomersList.setAdapter(customerAdapter);
+        fillData();
+
 
 
     }
     @Override
     protected void onRestart() {
         super.onRestart();
+        fillData();
+
+    }
+
+    private void fillData() {
+        rVCustomersList = findViewById(R.id.rvCustomerList);
+        customerAdapter = new customerAdapter();
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        rVCustomersList.setLayoutManager(mLayoutManager);
+        rVCustomersList.setAdapter(customerAdapter);
+
 
     }
 

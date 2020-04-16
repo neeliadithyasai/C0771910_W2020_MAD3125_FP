@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.c0771910_w2020_mad3125_fp.R;
+import com.example.c0771910_w2020_mad3125_fp.model.Customer;
+import com.example.c0771910_w2020_mad3125_fp.util.DataManager;
 
 public class addCustomerActivity extends AppCompatActivity {
     private TextView customerId;
@@ -30,6 +32,20 @@ public class addCustomerActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (customerId.getText().toString().matches("")){
+                    customerId.setError("enter customer ID!");
+                }else if(customerFirstName.getText().toString().matches("")){
+                    customerFirstName.setError("enter FirstName!");
+                }else if(customerLastName.getText().toString().matches("")){
+                    customerLastName.setError("enter Last Name!");
+                }else if(customerEmailId.getText().toString().matches("")){
+                    customerEmailId.setError("enter Last Name!");
+                }else {
+                    Customer tempObj = new Customer(customerId.getText().toString(),customerFirstName.getText().toString(),customerLastName.getText().toString(),customerEmailId.getText().toString());
+                    DataManager.getInstance().addCustomer(tempObj);
+                    finish();
+                }
 
 
 
