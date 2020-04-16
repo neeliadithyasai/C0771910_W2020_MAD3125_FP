@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.example.c0771910_w2020_mad3125_fp.R;
 import com.example.c0771910_w2020_mad3125_fp.adapters.customerAdapter;
@@ -38,6 +41,30 @@ public class homeActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
 
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {         //https://javatpoint.com/android-option-menu-example
+
+        getMenuInflater().inflate(R.menu.addcustomer, menu);
+        return true;
+    }
+
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu1:
+                Intent intent2 = new Intent(homeActivity.this, addCustomerActivity.class);
+                startActivity(intent2);
+
+                return true;
+            case R.id.menu2:
+
+                Intent intent = new Intent(homeActivity.this, loginActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 
