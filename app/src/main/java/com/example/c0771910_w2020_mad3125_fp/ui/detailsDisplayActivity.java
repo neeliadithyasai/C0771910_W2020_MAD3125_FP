@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.c0771910_w2020_mad3125_fp.R;
@@ -62,5 +64,26 @@ public class detailsDisplayActivity extends AppCompatActivity {
     public ArrayList<Bill> getBillsArrayList()
     {
         return this.billsArrayList;
+    }
+
+
+    public boolean onCreateOptionsMenu(Menu menu) {         //https://javatpoint.com/android-option-menu-example
+
+        getMenuInflater().inflate(R.menu.addbill, menu);
+        return true;
+    }
+
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu3:
+                Intent intent3 = new Intent(detailsDisplayActivity.this, addBillActivity.class);
+                startActivity(intent3);
+
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
