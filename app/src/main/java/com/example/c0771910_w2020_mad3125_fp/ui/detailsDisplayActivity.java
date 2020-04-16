@@ -24,6 +24,7 @@ public class detailsDisplayActivity extends AppCompatActivity {
     private TextView CustId;
     private TextView custName;
     private TextView custEmailId;
+    private TextView custTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +41,13 @@ public class detailsDisplayActivity extends AppCompatActivity {
         CustId = findViewById(R.id.txtCustomerId);
         custName = findViewById(R.id.txtCustomerName);
         custEmailId = findViewById(R.id.txtCustomerEmail);
+        custTotal = findViewById(R.id.txtCustomerTotalAmount);
 
         CustId.setText(customerObj.getFullName());
         custName.setText(customerObj.getFirstName());
         custEmailId.setText(customerObj.getEmailId());
+        custTotal.setText(String.valueOf(customerObj.getTotalAmount()));
+
         BillsAdapter = new billsAdapter(this.billsArrayList);
 
 

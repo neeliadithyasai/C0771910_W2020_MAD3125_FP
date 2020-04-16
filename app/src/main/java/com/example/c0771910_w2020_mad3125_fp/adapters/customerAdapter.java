@@ -40,7 +40,7 @@ public class customerAdapter extends RecyclerView.Adapter<customerAdapter.custom
     {
 
         final Customer mcustomer = DataManager.getInstance().getCustomers().get(position);
-        holder.txtCustomername.setText(mcustomer.getFirstName());
+        holder.txtCustomername.setText(mcustomer.getFullName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener(){
 

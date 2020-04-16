@@ -17,6 +17,7 @@ public class Customer implements Parcelable {
     private String fullName;
     private String emailId;
     private HashMap<String, Bill> customerBills = new HashMap<String, Bill>();
+    private Double allTotal;
 
     public Customer(String customerId, String firstName, String lastName, String emailId) {
         this.customerId = customerId;
@@ -32,6 +33,7 @@ public class Customer implements Parcelable {
         lastName = in.readString();
         emailId = in.readString();
         customerBills = in.readHashMap(Bill.class.getClassLoader());
+        allTotal = in.readDouble();
     }
 
     public static final Creator<Customer> CREATOR = new Creator<Customer>() {
@@ -101,6 +103,13 @@ public void addBill(String billId, Bill bill)
         ArrayList<Bill> billsList = new ArrayList<>(demoValues);
         return billsList;
     }
+    public Double getAllTotal() {
+        return allTotal;
+    }
+
+    public void setAllTotal(Double allTotal) {
+        this.allTotal = allTotal;
+    }
 
     @Override
     public int describeContents() {
@@ -114,6 +123,12 @@ public void addBill(String billId, Bill bill)
         dest.writeString(lastName);
         dest.writeString(emailId);
         dest.writeMap(customerBills);
+        if (allTotal == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeDouble(allTotal);
+        }
 
     }
 
@@ -125,4 +140,14 @@ public void addBill(String billId, Bill bill)
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
+    public double getTotalAmount()
+    {
+        double allTotal2 = 0.0d;
+        for (Bill b : customerBills.values())
+        {
+            allTotal2 += b.getBillAmount();
+        }
+        return allTotal2;
+    }
+
 }

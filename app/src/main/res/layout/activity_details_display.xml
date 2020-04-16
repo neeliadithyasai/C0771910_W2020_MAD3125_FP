@@ -139,6 +139,41 @@
                         </com.google.android.material.textview.MaterialTextView>
 
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@color/design_default_color_on_secondary"
+                            android:text="Customer Total Amt"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="18sp">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txtCustomerTotalAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:background="@color/design_default_color_on_secondary"
+                            android:hint="Customer TotalAmount"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="18sp">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                    </LinearLayout>
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvBillsList"
