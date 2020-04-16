@@ -14,6 +14,7 @@ public class Customer implements Parcelable {
     private String customerId;
     private String firstName;
     private String lastName;
+    private String fullName;
     private String emailId;
     private HashMap<String, Bill> customerBills = new HashMap<String, Bill>();
 
@@ -114,5 +115,14 @@ public void addBill(String billId, Bill bill)
         dest.writeString(emailId);
         dest.writeMap(customerBills);
 
+    }
+
+    public String getFullName() {
+        fullName = firstName+" "+lastName;
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 }

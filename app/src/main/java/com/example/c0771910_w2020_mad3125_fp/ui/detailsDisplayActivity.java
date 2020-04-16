@@ -41,7 +41,7 @@ public class detailsDisplayActivity extends AppCompatActivity {
         custName = findViewById(R.id.txtCustomerName);
         custEmailId = findViewById(R.id.txtCustomerEmail);
 
-        CustId.setText(customerObj.getCustomerId());
+        CustId.setText(customerObj.getFullName());
         custName.setText(customerObj.getFirstName());
         custEmailId.setText(customerObj.getEmailId());
         BillsAdapter = new billsAdapter(this.billsArrayList);
