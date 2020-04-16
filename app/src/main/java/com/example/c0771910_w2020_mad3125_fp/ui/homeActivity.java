@@ -1,5 +1,6 @@
 package com.example.c0771910_w2020_mad3125_fp.ui;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +23,8 @@ public class homeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        ActionBar mActionBar = getSupportActionBar();
+        mActionBar.setTitle("Customers");
 
         rVCustomersList = findViewById(R.id.rvCustomerList);
         customerAdapter = new customerAdapter();
