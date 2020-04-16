@@ -18,7 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/design_default_color_secondary_variant"
+            android:background="@android:color/holo_blue_dark"
             android:orientation="vertical">
 
             <ScrollView
@@ -28,13 +28,13 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/design_default_color_secondary_variant"
+                    android:background="@android:color/holo_blue_dark"
                     android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/design_default_color_secondary_variant"
+                        android:background="@android:color/holo_blue_dark"
                         android:orientation="horizontal">
 
                         <com.google.android.material.textview.MaterialTextView
@@ -42,8 +42,11 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="20dp"
+                            android:layout_marginRight="5dp"
                             android:layout_weight="1"
-                            android:text="Customer Id">
+                            android:text="Customer Id"
+                            android:background="@color/design_default_color_on_secondary"
+                            android:textColor="@android:color/background_light">
 
                         </com.google.android.material.textview.MaterialTextView>
 
@@ -52,7 +55,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="5dp"
                             android:layout_weight="1"
+                            android:background="@color/design_default_color_on_secondary"
+                            android:textColor="@android:color/background_light"
                             android:hint="Customer Id">
 
                         </com.google.android.material.textview.MaterialTextView>
@@ -69,8 +76,11 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
                             android:layout_weight="1"
-                            android:text="Customer Name">
+                            android:text="Customer Name"
+                            android:background="@color/design_default_color_on_secondary"
+                            android:textColor="@android:color/background_light">
 
                         </com.google.android.material.textview.MaterialTextView>
 
@@ -79,8 +89,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="5dp"
                             android:layout_weight="1"
-                            android:hint="Customer Name">
+                            android:hint="Customer Name"
+                            android:background="@color/design_default_color_on_secondary"
+                            android:textColor="@android:color/background_light">
 
                         </com.google.android.material.textview.MaterialTextView>
 
@@ -96,8 +110,11 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
                             android:layout_weight="1"
-                            android:text="Customer emailId">
+                            android:text="Customer emailId"
+                            android:background="@color/design_default_color_on_secondary"
+                            android:textColor="@android:color/background_light">
 
                         </com.google.android.material.textview.MaterialTextView>
 
@@ -106,8 +123,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="5dp"
                             android:layout_weight="1"
-                            android:hint="Customer emailId">
+                            android:hint="Customer emailId"
+                            android:background="@color/design_default_color_on_secondary"
+                            android:textColor="@android:color/background_light">
 
                         </com.google.android.material.textview.MaterialTextView>
 
