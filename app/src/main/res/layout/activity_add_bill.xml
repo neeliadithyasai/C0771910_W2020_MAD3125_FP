@@ -12,17 +12,31 @@
         android:layout_height="match_parent"
         tools:context=".ui.addBillActivity">
 
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinnertype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:entries="@array/Billstype"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.appcompat.widget.AppCompatSpinner>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/billIDTextInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/spinnertype">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/BillIDTextInputEditText"
@@ -149,7 +163,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="296dp"
-        android:layout_marginTop="582dp"
+        android:layout_marginTop="620dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="93dp"
         android:src="@android:drawable/ic_input_add"
