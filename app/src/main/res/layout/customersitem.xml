@@ -9,6 +9,7 @@
         android:id="@+id/txtCustomerDisplay"
         android:layout_width="411dp"
         android:layout_height="59dp"
+        android:background="@android:color/darker_gray"
         android:textColor="@color/design_default_color_on_secondary"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
