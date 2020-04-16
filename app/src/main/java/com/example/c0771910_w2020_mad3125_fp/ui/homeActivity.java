@@ -67,8 +67,9 @@ public class homeActivity extends AppCompatActivity {
                 return true;
             case R.id.menu2:
 
-                Intent intent = new Intent(homeActivity.this, loginActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(homeActivity.this, loginActivity.class);
+//                startActivity(intent);
+               finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
