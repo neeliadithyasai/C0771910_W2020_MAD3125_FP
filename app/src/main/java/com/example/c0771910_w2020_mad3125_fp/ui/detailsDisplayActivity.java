@@ -21,6 +21,9 @@ public class detailsDisplayActivity extends AppCompatActivity {
     private RecyclerView rvBillsList;
     private ArrayList billsArrayList;
     private billsAdapter BillsAdapter;
+    private TextView CustId;
+    private TextView custName;
+    private TextView custEmailId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,15 @@ public class detailsDisplayActivity extends AppCompatActivity {
         billsArrayList = customerObj.getBills();
 
         rvBillsList = findViewById(R.id.rvBillsList);
+        CustId = findViewById(R.id.txtCustomerId);
+        custName = findViewById(R.id.txtCustomerName);
+        custEmailId = findViewById(R.id.txtCustomerEmail);
+
+        CustId.setText(customerObj.getCustomerId());
+        custName.setText(customerObj.getFirstName());
+        custEmailId.setText(customerObj.getEmailId());
         BillsAdapter = new billsAdapter(this.billsArrayList);
+
 
         RecyclerView.LayoutManager mLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 

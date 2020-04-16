@@ -35,7 +35,7 @@ public class billsAdapter extends RecyclerView.Adapter<billsAdapter.billsViewHol
 
         Bill mBills = this.billArrayList.get(position);
         holder.txtCellBillId.setText(mBills.getBillId());
-       // holder.txtCellBillAmount.setText();
+       holder.txtCellBillAmount.setText(mBills.getBillAmount().toString());
         holder.txtCellBillDate.setText(mBills.getBillDate().toString());
         holder.txtCellBillType.setText(mBills.getBillType().toString());
 
