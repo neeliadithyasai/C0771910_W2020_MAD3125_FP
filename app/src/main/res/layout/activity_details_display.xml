@@ -44,9 +44,10 @@
                             android:layout_marginTop="20dp"
                             android:layout_marginRight="5dp"
                             android:layout_weight="1"
-                            android:text="Customer Id"
                             android:background="@color/design_default_color_on_secondary"
-                            android:textColor="@android:color/background_light">
+                            android:text="Customer Id"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="18sp">
 
                         </com.google.android.material.textview.MaterialTextView>
 
@@ -54,13 +55,14 @@
                             android:id="@+id/txtCustomerId"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
                             android:layout_marginTop="20dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginLeft="5dp"
                             android:layout_weight="1"
                             android:background="@color/design_default_color_on_secondary"
+                            android:hint="Customer Id"
                             android:textColor="@android:color/background_light"
-                            android:hint="Customer Id">
+                            android:textSize="18sp">
 
                         </com.google.android.material.textview.MaterialTextView>
 
@@ -78,9 +80,10 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="5dp"
                             android:layout_weight="1"
-                            android:text="Customer Name"
                             android:background="@color/design_default_color_on_secondary"
-                            android:textColor="@android:color/background_light">
+                            android:text="Customer Name"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="18sp">
 
                         </com.google.android.material.textview.MaterialTextView>
 
@@ -88,13 +91,14 @@
                             android:id="@+id/txtCustomerName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginLeft="5dp"
                             android:layout_weight="1"
-                            android:hint="Customer Name"
                             android:background="@color/design_default_color_on_secondary"
-                            android:textColor="@android:color/background_light">
+                            android:hint="Customer Name"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="18sp">
 
                         </com.google.android.material.textview.MaterialTextView>
 
@@ -112,9 +116,10 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="5dp"
                             android:layout_weight="1"
-                            android:text="Customer emailId"
                             android:background="@color/design_default_color_on_secondary"
-                            android:textColor="@android:color/background_light">
+                            android:text="Customer emailId"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="18sp">
 
                         </com.google.android.material.textview.MaterialTextView>
 
@@ -122,13 +127,14 @@
                             android:id="@+id/txtCustomerEmail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginLeft="5dp"
                             android:layout_weight="1"
-                            android:hint="Customer emailId"
                             android:background="@color/design_default_color_on_secondary"
-                            android:textColor="@android:color/background_light">
+                            android:hint="Customer emailId"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="18sp">
 
                         </com.google.android.material.textview.MaterialTextView>
 
