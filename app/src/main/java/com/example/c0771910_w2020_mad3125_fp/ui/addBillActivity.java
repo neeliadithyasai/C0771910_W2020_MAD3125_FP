@@ -22,7 +22,7 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
 
 
     private TextView billID;
-    private TextView BillDate;
+    private TextView billDate;
     private TextView unitsUsed;
     private TextView agencyName;
     private TextView minutesUsed;
@@ -39,7 +39,7 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         billID = findViewById(R.id.BillIDTextInputEditText);
-        BillDate = findViewById(R.id.BillDateTextInputEditText);
+        billDate = findViewById(R.id.BillDateTextInputEditText);
         unitsUsed = findViewById(R.id.enterunitsusedInputEditText);
          agencyName = findViewById(R.id.enteragencynameInputEditText);
          minutesUsed = findViewById(R.id.enterminutesusedInputEditText);
@@ -67,5 +67,49 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
     }
 
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        ((TextView) parent.getChildAt(0)).setTextColor(Color.BLACK);
+        ((TextView) parent.getChildAt(0)).setTextSize(18);
+        ((TextView) parent.getChildAt(0)).setTypeface(null, Typeface.BOLD);
 
+
+    }
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    public void initFields()
+    {
+        minutesUsed.setVisibility(View.VISIBLE);
+        mobilenumber.setVisibility(View.VISIBLE);
+        dataused.setVisibility(View.VISIBLE);
+        minutesUsed.setVisibility(View.VISIBLE);
+        planName.setVisibility(View.VISIBLE);
+        manufacturerName.setVisibility(View.VISIBLE);
+    }
+    public void hidefields()
+    {
+        minutesUsed.setVisibility(View.INVISIBLE);
+        mobilenumber.setVisibility(View.INVISIBLE);
+        dataused.setVisibility(View.INVISIBLE);
+        minutesUsed.setVisibility(View.INVISIBLE);
+        planName.setVisibility(View.INVISIBLE);
+        manufacturerName.setVisibility(View.INVISIBLE);
+    }
+
+    public void clearfields()
+    {
+        mobilenumber.setText("");
+        dataused.setText("");
+        minutesUsed.setText("");
+        planName.setText("");
+        manufacturerName.setText("");
+        billDate.setText("");
+        billID.setText("");
+        agencyName.setText("");
+        dataused.setText("");
+        unitsUsed.setText("");
+    }
 }
