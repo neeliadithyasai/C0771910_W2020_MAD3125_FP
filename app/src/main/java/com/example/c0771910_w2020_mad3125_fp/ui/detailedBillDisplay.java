@@ -33,12 +33,16 @@ public class detailedBillDisplay extends AppCompatActivity {
 
         if(billObj.getBillType().matches("HYDRO"))
         {
+
+            billimg.setImageResource(R.mipmap.ic_hydro);
+
            Hydro hbillObj = (Hydro) mIntent.getSerializableExtra("billOBJ");
 
            billtext.setText(hbillObj.getBillId()+"\n"+hbillObj.getBillDate()+"\n"+hbillObj.getBillType()+"\n"+hbillObj.getAgencyName()+"\n"+hbillObj.getUnitsConsumed()+"\n"+hbillObj.getBillAmount());
 
         }else if(billObj.getBillType().matches("MOBILE"))
         {
+            billimg.setImageResource(R.mipmap.ic_mobile);
 
             Mobile mbillObj = (Mobile) mIntent.getSerializableExtra("billOBJ");
 
