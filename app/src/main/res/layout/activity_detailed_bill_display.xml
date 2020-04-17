@@ -7,17 +7,17 @@
     tools:context=".ui.detailedBillDisplay">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgBilldisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintBottom_toTopOf="@+id/textbillDisplay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textbillDisplay"
         android:layout_width="348dp"
         android:layout_height="347dp"
         android:text="TextView"

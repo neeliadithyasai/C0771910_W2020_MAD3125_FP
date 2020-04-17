@@ -1,5 +1,6 @@
 package com.example.c0771910_w2020_mad3125_fp.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.c0771910_w2020_mad3125_fp.R;
 import com.example.c0771910_w2020_mad3125_fp.model.Bill;
+import com.example.c0771910_w2020_mad3125_fp.ui.detailedBillDisplay;
+import com.example.c0771910_w2020_mad3125_fp.ui.detailsDisplayActivity;
 
 import java.util.ArrayList;
 
@@ -31,13 +34,24 @@ public class billsAdapter extends RecyclerView.Adapter<billsAdapter.billsViewHol
     }
 
     @Override
-    public void onBindViewHolder(@NonNull billsAdapter.billsViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final billsAdapter.billsViewHolder holder, int position) {
 
-        Bill mBills = this.billArrayList.get(position);
+        final Bill mBills = this.billArrayList.get(position);
         holder.txtCellBillId.setText(mBills.getBillId());
        holder.txtCellBillAmount.setText(mBills.getBillAmount().toString());
         holder.txtCellBillDate.setText(mBills.getBillDate().toString());
         holder.txtCellBillType.setText(mBills.getBillType().toString());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent mIntent = new Intent(holder.itemView.getContext(), detailedBillDisplay.class);
+                mIntent.putExtra("billOBJ",mBills);
+                holder.itemView.getContext().startActivity(mIntent);
+
+            }
+        });
 
     }
 
