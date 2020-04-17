@@ -21,6 +21,9 @@
         android:layout_width="348dp"
         android:layout_height="347dp"
         android:text="TextView"
+        android:textAllCaps="false"
+        android:textColor="@color/material_on_background_emphasis_high_type"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
