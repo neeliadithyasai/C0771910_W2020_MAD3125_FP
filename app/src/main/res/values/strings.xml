@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">C0771910_W2020_MAD3125_FP</string>
-<!--    <string-array name="Billstype">-->
-<!--        <item>Choose One Type</item>-->
-<!--        <item>MOBILE</item>-->
-<!--        <item>HYDRO</item>-->
-<!--        <item>INTERNET</item>-->
-<!--    </string-array>-->
-<!--    <string name="cg">choose gender</string>-->
+    <!--    <string-array name="Billstype">-->
+    <!--        <item>Choose One Type</item>-->
+    <!--        <item>MOBILE</item>-->
+    <!--        <item>HYDRO</item>-->
+    <!--        <item>INTERNET</item>-->
+    <!--    </string-array>-->
+    <!--    <string name="cg">choose gender</string>-->
 </resources>
