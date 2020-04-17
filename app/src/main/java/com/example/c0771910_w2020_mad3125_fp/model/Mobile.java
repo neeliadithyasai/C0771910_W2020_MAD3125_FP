@@ -18,4 +18,44 @@ public class Mobile extends Bill{
 
 
     }
+
+    public String getModelName() {
+        return modelName;
+    }
+
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public String getPlanName() {
+        return planName;
+    }
+
+    public void setPlanName(String planName) {
+        this.planName = planName;
+    }
+
+    public int getInternetUsed() {
+        return internetUsed;
+    }
+
+    public void setInternetUsed(int internetUsed) {
+        this.internetUsed = internetUsed;
+    }
+
+    public int getMinutesUsed() {
+        return minutesUsed;
+    }
+
+    public void setMinutesUsed(int minutesUsed) {
+        this.minutesUsed = minutesUsed;
+    }
 }

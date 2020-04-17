@@ -18,8 +18,8 @@ public class DataManager
 
     public void loaddata() {
 
-        Hydro H1 = new Hydro("HYD001","28/07/1995","hydro",455.0,"rogers",25);
-        Mobile M1 = new Mobile("MOB001","28/07/1995","Mobile",500.5,"iphone", "0989789687","wakeup",15,24);
+        Hydro H1 = new Hydro("HYD001","28/07/1995","HYDRO",455.0,"rogers",25);
+        Mobile M1 = new Mobile("MOB001","28/07/1995","MOBILE",500.5,"iphone", "0989789687","wakeup",15,24);
 
         Customer cust1 = new Customer("001","oliver","queen","oliverq@gmail.com");
 

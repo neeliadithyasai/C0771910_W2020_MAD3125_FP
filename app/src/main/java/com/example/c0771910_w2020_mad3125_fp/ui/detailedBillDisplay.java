@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.example.c0771910_w2020_mad3125_fp.R;
 import com.example.c0771910_w2020_mad3125_fp.model.Bill;
 import com.example.c0771910_w2020_mad3125_fp.model.Customer;
+import com.example.c0771910_w2020_mad3125_fp.model.Hydro;
+import com.example.c0771910_w2020_mad3125_fp.model.Mobile;
 
 public class detailedBillDisplay extends AppCompatActivity {
 
@@ -26,6 +28,25 @@ public class detailedBillDisplay extends AppCompatActivity {
 
         Intent mIntent = getIntent();
         Bill billObj = mIntent.getParcelableExtra("billOBJ");
+
+        if(billObj.getBillType().matches("HYDRO"))
+        {
+            Intent hIntent = getIntent();
+           Hydro hbillObj = hIntent.getParcelableExtra("billOBJ");
+
+           billtext.setText(hbillObj.getBillId()+"\n"+hbillObj.getBillDate()+"\n"+hbillObj.getBillType()+"\n"+hbillObj.getAgencyName()+"\n"+hbillObj.getUnitsConsumed()+"\n"+hbillObj.getBillAmount());
+
+        }if(billObj.getBillType().matches("MOBILE"))
+        {
+            Intent moIntent = getIntent();
+            Mobile mbillObj = moIntent.getParcelableExtra("billOBJ");
+
+            billtext.setText(mbillObj.getBillId()+"\n"+mbillObj.getBillDate()+"\n"+mbillObj.getBillType()+"\n"+mbillObj.g()+"\n"+hbillObj.getUnitsConsumed()+"\n"+hbillObj.getBillAmount());
+
+        }else {
+
+            billtext.setText("no bill found");
+        }
 
 
 
