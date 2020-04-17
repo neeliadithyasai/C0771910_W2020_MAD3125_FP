@@ -10,14 +10,14 @@
         android:id="@+id/imgBilldisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/textbillDisplay"
+        app:layout_constraintBottom_toTopOf="@+id/txtbillDisplay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/textbillDisplay"
+        android:id="@+id/txtbillDisplay"
         android:layout_width="348dp"
         android:layout_height="347dp"
         android:text="TextView"
