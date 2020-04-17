@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -29,6 +30,8 @@ public class detailsDisplayActivity extends AppCompatActivity {
     private TextView custEmailId;
     private TextView custTotal;
 
+    public static int name = 100;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,21 +39,15 @@ public class detailsDisplayActivity extends AppCompatActivity {
         ActionBar mActionBar = getSupportActionBar();
         mActionBar.setTitle("YOUR BILLS");
 
-        Intent mIntent = getIntent();
-        Customer customerObj = mIntent.getParcelableExtra("CustomerOBJ");
-        billsArrayList = customerObj.getBills();
-
-
         rvBillsList = findViewById(R.id.rvBillsList);
         CustId = findViewById(R.id.txtCustomerId);
         custName = findViewById(R.id.txtCustomerName);
         custEmailId = findViewById(R.id.txtCustomerEmail);
         custTotal = findViewById(R.id.txtCustomerTotalAmount);
 
-        CustId.setText(customerObj.getFullName());
-        custName.setText(customerObj.getFirstName());
-        custEmailId.setText(customerObj.getEmailId());
-        custTotal.setText(String.valueOf(customerObj.getTotalAmount()));
+
+
+//        custTotal.setText(String.valueOf(customerObj.getTotalAmount()));
 
         fillData();
 
@@ -66,14 +63,28 @@ public class detailsDisplayActivity extends AppCompatActivity {
     }
 
 
+
     private void fillData() {
-        BillsAdapter = new billsAdapter(this.billsArrayList);
+
+            Intent mIntent = getIntent();
+            Customer customerObj = mIntent.getParcelableExtra("CustomerOBJ");
+
+            billsArrayList = DataManager.getInstance().getcstbills(customerObj);
 
 
-        RecyclerView.LayoutManager mLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+            BillsAdapter = new billsAdapter(billsArrayList);
 
-        rvBillsList.setLayoutManager(mLinearLayoutManager);
-        rvBillsList.setAdapter(BillsAdapter);
+
+            RecyclerView.LayoutManager mLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+
+            rvBillsList.setLayoutManager(mLinearLayoutManager);
+            rvBillsList.setAdapter(BillsAdapter);
+
+            CustId.setText(customerObj.getFullName());
+            custName.setText(customerObj.getFirstName());
+            custEmailId.setText(customerObj.getEmailId());
+            custTotal.setText(String.valueOf(customerObj.getBills().size()));
+
 
 
     }
@@ -108,4 +119,16 @@ public class detailsDisplayActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
+//    public void onActivityResult(int requestCode,int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (resultCode == Activity.RESULT_OK) {
+//            Customer tempobj = data.getParcelableExtra("CustomerOBJ");
+//
+//            billsArrayList = tempobj.getBills();
+//            fillData();
+//        }
+//    }
+
 }

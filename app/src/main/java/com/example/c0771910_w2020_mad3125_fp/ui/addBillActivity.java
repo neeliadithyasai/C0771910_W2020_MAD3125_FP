@@ -104,13 +104,19 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent mIntent = getIntent();
-                    Customer customerObj = mIntent.getParcelableExtra("CustomerOBJ");
+                    Intent hIntent = getIntent();
+                    Customer customerObj = hIntent.getParcelableExtra("CustomerOBJ");
 
 
                     Hydro tempHydro = new Hydro(billID.getText().toString(),billDate.getText().toString(),"hydro",50.5,agencyName.getText().toString(),Integer.parseInt(unitsUsed.getText().toString()));
 
-                    customerObj.addBill("HYD1",tempHydro);
+                    //customerObj.addBill(tempHydro.getBillId(),tempHydro);
+                   DataManager.getInstance().addBill(customerObj,tempHydro);
+//
+//                    Intent intent3 = new Intent();
+//                    intent3.putExtra("CustomerOBJ",customerObj);
+//                    setResult(RESULT_OK,intent3);
+
                     finish();
 
 

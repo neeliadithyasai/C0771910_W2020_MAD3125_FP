@@ -44,6 +44,17 @@ public class DataManager
         customers.add(customer);
     }
 
+    public void addBill(Customer customer,Bill bill)
+    {
+
+        customer.addBill(bill.getBillId(),bill);
+    }
+
+    public ArrayList<Bill> getcstbills(Customer customer)
+    {
+        return customer.getBills();
+    }
+
 
 
 
