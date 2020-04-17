@@ -69,7 +69,7 @@ public class detailsDisplayActivity extends AppCompatActivity {
             Intent mIntent = getIntent();
             Customer customerObj = mIntent.getParcelableExtra("CustomerOBJ");
 
-            billsArrayList = DataManager.getInstance().getcstbills(customerObj);
+            billsArrayList = customerObj.getBills();
 
 
             BillsAdapter = new billsAdapter(billsArrayList);

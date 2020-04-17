@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.c0771910_w2020_mad3125_fp.R;
 import com.example.c0771910_w2020_mad3125_fp.model.Bill;
+import com.example.c0771910_w2020_mad3125_fp.model.Customer;
 import com.example.c0771910_w2020_mad3125_fp.ui.detailedBillDisplay;
 import com.example.c0771910_w2020_mad3125_fp.ui.detailsDisplayActivity;
 
