@@ -104,7 +104,7 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                new DatePickerDialog(informationEntryScreen.this, date, myCalendar
+                new DatePickerDialog(addBillActivity.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
