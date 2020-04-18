@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.c0771910_w2020_mad3125_fp.R;
 import com.example.c0771910_w2020_mad3125_fp.model.Customer;
 import com.example.c0771910_w2020_mad3125_fp.util.DataManager;
+import com.example.c0771910_w2020_mad3125_fp.util.StringExtension;
 
 public class addCustomerActivity extends AppCompatActivity {
     private TextView customerId;
@@ -41,7 +42,7 @@ public class addCustomerActivity extends AppCompatActivity {
                     customerLastName.setError("enter Last Name!");
                 }else if(customerEmailId.getText().toString().matches("")){
                     customerEmailId.setError("enter Email!");
-                }else if(customerEmailId.getText().toString().matches("[A-Z0-9a-z.%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"))
+                }else if(StringExtension.emailValidation(customerEmailId.getText().toString()) == true)
                 {
                     Customer tempObj = new Customer(customerId.getText().toString(),customerFirstName.getText().toString(),customerLastName.getText().toString(),customerEmailId.getText().toString());
                     DataManager.getInstance().addCustomer(tempObj);
