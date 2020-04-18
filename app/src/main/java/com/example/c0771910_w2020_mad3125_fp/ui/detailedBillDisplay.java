@@ -11,6 +11,7 @@ import com.example.c0771910_w2020_mad3125_fp.R;
 import com.example.c0771910_w2020_mad3125_fp.model.Bill;
 import com.example.c0771910_w2020_mad3125_fp.model.Customer;
 import com.example.c0771910_w2020_mad3125_fp.model.Hydro;
+import com.example.c0771910_w2020_mad3125_fp.model.Internet;
 import com.example.c0771910_w2020_mad3125_fp.model.Mobile;
 
 public class detailedBillDisplay extends AppCompatActivity {
@@ -47,6 +48,14 @@ public class detailedBillDisplay extends AppCompatActivity {
             Mobile mbillObj = (Mobile) mIntent.getSerializableExtra("billOBJ");
 
             billtext.setText("Bill ID    :   "+mbillObj.getBillId()+"\nBill Date    :   "+mbillObj.getBillDate()+"\nBill Type  :   "+mbillObj.getBillType()+"\nMobile No    :   "+mbillObj.getMobileNumber()+"\nModel Name  :   "+mbillObj.getModelName()+"\nPlan Name  :   "+mbillObj.getPlanName()+"\nInternet Used   :   "+mbillObj.getInternetUsed()+"\nMinutes used    :   "+mbillObj.getMinutesUsed()+"\nBill Amount  :   "+mbillObj.getBillAmount());
+
+        }else if(billObj.getBillType().matches("INTERNET"))
+        {
+            billimg.setImageResource(R.mipmap.ic_internet);
+
+            Internet ibillObj = (Internet) mIntent.getSerializableExtra("billOBJ");
+
+            billtext.setText("Bill ID    :   "+ibillObj.getBillId()+"\nBill Date    :   "+ibillObj.getBillDate()+"\nBill Type  :   "+ibillObj.getBillType()+"\nInternet Provider  :   "+ibillObj.getProviderName()+"\nInternet Used  :  "+ibillObj.getInternetUsed()+"\nBill Amount  :   "+ibillObj.getBillAmount());
 
         }else {
 
