@@ -1,5 +1,6 @@
 package com.example.c0771910_w2020_mad3125_fp.ui;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -41,6 +42,8 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_bill);
+        ActionBar mActionBar = getSupportActionBar();
+        mActionBar.setTitle("Add Bill");
 
         fab = findViewById(R.id.fab);
         billID = findViewById(R.id.BillIDTextInputEditText);
@@ -132,6 +135,7 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
            hidefields();
             clearfields();
             dataused.setVisibility(View.VISIBLE);
+            unitsUsed.setVisibility(View.INVISIBLE);
             agencyName.setVisibility(View.VISIBLE);
             agencyName.setHint("ENTER PROVIDER NAME");
 //            unitsUsed.setHint("ENTER DATA USED");

@@ -38,7 +38,7 @@ public class detailedBillDisplay extends AppCompatActivity {
 
            Hydro hbillObj = (Hydro) mIntent.getSerializableExtra("billOBJ");
 
-           billtext.setText(hbillObj.getBillId()+"\n"+hbillObj.getBillDate()+"\n"+hbillObj.getBillType()+"\n"+hbillObj.getAgencyName()+"\n"+hbillObj.getUnitsConsumed()+"\n"+hbillObj.getBillAmount());
+           billtext.setText("Bill ID    :   "+hbillObj.getBillId()+"\nBill Date    :   "+hbillObj.getBillDate()+"\nBill Type  :   "+hbillObj.getBillType()+"\nAgency Name    :   "+hbillObj.getAgencyName()+"\nUnits Consumed   :    "+hbillObj.getUnitsConsumed()+"\nBill Amount   :    "+hbillObj.getBillAmount());
 
         }else if(billObj.getBillType().matches("MOBILE"))
         {
@@ -46,7 +46,7 @@ public class detailedBillDisplay extends AppCompatActivity {
 
             Mobile mbillObj = (Mobile) mIntent.getSerializableExtra("billOBJ");
 
-            billtext.setText(mbillObj.getBillId()+"\n"+mbillObj.getBillDate()+"\n"+mbillObj.getBillType()+"\n"+mbillObj.getMobileNumber()+"\n"+mbillObj.getModelName()+"\n"+mbillObj.getPlanName()+"\n"+mbillObj.getInternetUsed()+"\n"+mbillObj.getMinutesUsed()+"\n"+mbillObj.getBillAmount());
+            billtext.setText("Bill ID    :   "+mbillObj.getBillId()+"\nBill Date    :   "+mbillObj.getBillDate()+"\nBill Type  :   "+mbillObj.getBillType()+"\nMobile No    :   "+mbillObj.getMobileNumber()+"\nModel Name  :   "+mbillObj.getModelName()+"\nPlan Name  :   "+mbillObj.getPlanName()+"\nInternet Used   :   "+mbillObj.getInternetUsed()+"\nMinutes used    :   "+mbillObj.getMinutesUsed()+"\nBill Amount  :   "+mbillObj.getBillAmount());
 
         }else {
 

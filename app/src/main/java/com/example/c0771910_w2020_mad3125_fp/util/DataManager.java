@@ -3,6 +3,7 @@ package com.example.c0771910_w2020_mad3125_fp.util;
 import com.example.c0771910_w2020_mad3125_fp.model.Bill;
 import com.example.c0771910_w2020_mad3125_fp.model.Customer;
 import com.example.c0771910_w2020_mad3125_fp.model.Hydro;
+import com.example.c0771910_w2020_mad3125_fp.model.Internet;
 import com.example.c0771910_w2020_mad3125_fp.model.Mobile;
 
 import java.util.ArrayList;
@@ -20,11 +21,13 @@ public class DataManager
 
         Hydro H1 = new Hydro("HYD001","28/07/1995","HYDRO",455.0,"rogers",25);
         Mobile M1 = new Mobile("MOB001","28/07/1995","MOBILE",500.5,"iphone", "0989789687","wakeup",15,24);
-
+        Internet I1 = new Internet("INT001","25/01/2019","INTERNET",75.0,"Rogers",15.0);
         Customer cust1 = new Customer("001","oliver","queen","oliverq@gmail.com");
 
-        cust1.addBill("HYD", H1);
-        cust1.addBill("MOB",M1);
+        cust1.addBill(H1.getBillId(), H1);
+        cust1.addBill(M1.getBillId(),M1);
+        cust1.addBill(I1.getBillId(),I1);
+
 
         customers.add(cust1);
 
