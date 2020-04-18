@@ -40,11 +40,14 @@ public class addCustomerActivity extends AppCompatActivity {
                 }else if(customerLastName.getText().toString().matches("")){
                     customerLastName.setError("enter Last Name!");
                 }else if(customerEmailId.getText().toString().matches("")){
-                    customerEmailId.setError("enter Last Name!");
-                }else {
+                    customerEmailId.setError("enter Email!");
+                }else if(customerEmailId.getText().toString().matches("[A-Z0-9a-z.%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"))
+                {
                     Customer tempObj = new Customer(customerId.getText().toString(),customerFirstName.getText().toString(),customerLastName.getText().toString(),customerEmailId.getText().toString());
                     DataManager.getInstance().addCustomer(tempObj);
                     finish();
+                }else  {
+                    customerEmailId.setError("enter Valid email!");
                 }
 
 
