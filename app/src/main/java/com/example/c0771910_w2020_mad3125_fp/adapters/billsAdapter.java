@@ -14,6 +14,7 @@ import com.example.c0771910_w2020_mad3125_fp.model.Bill;
 import com.example.c0771910_w2020_mad3125_fp.model.Customer;
 import com.example.c0771910_w2020_mad3125_fp.ui.detailedBillDisplay;
 import com.example.c0771910_w2020_mad3125_fp.ui.detailsDisplayActivity;
+import com.example.c0771910_w2020_mad3125_fp.util.StringExtension;
 
 import java.util.ArrayList;
 
@@ -39,7 +40,7 @@ public class billsAdapter extends RecyclerView.Adapter<billsAdapter.billsViewHol
 
         final Bill mBills = this.billArrayList.get(position);
         holder.txtCellBillId.setText(mBills.getBillId());
-       holder.txtCellBillAmount.setText(mBills.getBillAmount().toString());
+       holder.txtCellBillAmount.setText(StringExtension.doubleFormatter(mBills.getBillAmount()));
         holder.txtCellBillDate.setText(mBills.getBillDate().toString());
         holder.txtCellBillType.setText(mBills.getBillType().toString());
 
