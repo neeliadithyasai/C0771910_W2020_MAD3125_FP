@@ -21,6 +21,7 @@ import com.example.c0771910_w2020_mad3125_fp.model.Hydro;
 import com.example.c0771910_w2020_mad3125_fp.model.Internet;
 import com.example.c0771910_w2020_mad3125_fp.model.Mobile;
 import com.example.c0771910_w2020_mad3125_fp.util.DataManager;
+import com.example.c0771910_w2020_mad3125_fp.util.StringExtension;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.SimpleDateFormat;
@@ -138,15 +139,20 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
                     Intent mIntent = getIntent();
                     Customer customerObj = mIntent.getParcelableExtra("CustomerOBJ");
 
-                    Mobile tempmobile = new Mobile(billID.getText().toString(),billDate.getText().toString(),spbillType.getSelectedItem().toString(),Double.parseDouble(billAmount.getText().toString()),manufacturerName.getText().toString(),mobilenumber.getText().toString(),planName.getText().toString(),Integer.parseInt(dataused.getText().toString()),Integer.parseInt(minutesUsed.getText().toString()));
+                    if(StringExtension.mobileValidation(mobilenumber.getText().toString()) == true) {
 
-                    customerObj.addBill(tempmobile.getBillId(),tempmobile);
+                        Mobile tempmobile = new Mobile(billID.getText().toString(), billDate.getText().toString(), spbillType.getSelectedItem().toString(), Double.parseDouble(billAmount.getText().toString()), manufacturerName.getText().toString(), mobilenumber.getText().toString(), planName.getText().toString(), Integer.parseInt(dataused.getText().toString()), Integer.parseInt(minutesUsed.getText().toString()));
 
-                    Intent intent3 = new Intent(addBillActivity.this,detailsDisplayActivity.class);
+                        customerObj.addBill(tempmobile.getBillId(), tempmobile);
 
-                    intent3.putExtra("CustomerOBJ",customerObj);
+                        Intent intent3 = new Intent(addBillActivity.this, detailsDisplayActivity.class);
 
-                    startActivity(intent3);
+                        intent3.putExtra("CustomerOBJ", customerObj);
+
+                        startActivity(intent3);
+                    }else {
+                        mobilenumber.setError("Invalid mobile number!");
+                    }
 
 
 
