@@ -14,6 +14,7 @@ public class DataManager
     private ArrayList<Customer> customers = new ArrayList<>();
 
     private DataManager() {
+
         loaddata();
     }
 
@@ -28,18 +29,11 @@ public class DataManager
         cust1.addBill(M1.getBillId(),M1);
         cust1.addBill(I1.getBillId(),I1);
 
-
         customers.add(cust1);
-
-
-
 
     }
 
     public static DataManager getInstance(){
-
-
-
         return INSTANCE;
     }
 
@@ -49,7 +43,6 @@ public class DataManager
 
     public void addBill(Customer customer,Bill bill)
     {
-
         customer.addBill(bill.getBillId(),bill);
     }
 
@@ -57,9 +50,6 @@ public class DataManager
     {
         return customer.getBills();
     }
-
-
-
 
     public ArrayList<Customer> getCustomers(){
         return customers;

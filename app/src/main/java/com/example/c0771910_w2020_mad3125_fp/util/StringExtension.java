@@ -20,4 +20,6 @@ public class StringExtension {
     {
         return String.format("$ " + "%,.2f", d);
     }
+
+
 }

@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.example.c0771910_w2020_mad3125_fp.R;
 import com.example.c0771910_w2020_mad3125_fp.model.Customer;
 import com.example.c0771910_w2020_mad3125_fp.model.Hydro;
+import com.example.c0771910_w2020_mad3125_fp.model.Internet;
 import com.example.c0771910_w2020_mad3125_fp.model.Mobile;
 import com.example.c0771910_w2020_mad3125_fp.util.DataManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -42,6 +43,7 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
     private Spinner spbillType;
     private TextView mobilenumber;
     private TextView dataused;
+    private TextView billAmount;
     private FloatingActionButton fab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,7 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
         mobilenumber = findViewById(R.id.mobilenumberInputEditText);
         dataused = findViewById(R.id.datausedInputEditText);
         spbillType = findViewById(R.id.spinnertype);
+        billAmount = findViewById(R.id.billAmountInputEditText);
 
 
 
@@ -132,6 +135,21 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Intent mIntent = getIntent();
+                    Customer customerObj = mIntent.getParcelableExtra("CustomerOBJ");
+
+                    Mobile tempmobile = new Mobile(billID.getText().toString(),billDate.getText().toString(),spbillType.getSelectedItem().toString(),Double.parseDouble(billAmount.getText().toString()),manufacturerName.getText().toString(),mobilenumber.getText().toString(),planName.getText().toString(),Integer.parseInt(dataused.getText().toString()),Integer.parseInt(minutesUsed.getText().toString()));
+
+                    customerObj.addBill(tempmobile.getBillId(),tempmobile);
+
+                    Intent intent3 = new Intent(addBillActivity.this,detailsDisplayActivity.class);
+
+                    intent3.putExtra("CustomerOBJ",customerObj);
+
+                    startActivity(intent3);
+
+
+
 
                 }
             });
@@ -152,7 +170,7 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
                     Customer customerObj = hIntent.getParcelableExtra("CustomerOBJ");
 
 
-                    Hydro tempHydro = new Hydro(billID.getText().toString(),billDate.getText().toString(),"hydro",50.5,agencyName.getText().toString(),Integer.parseInt(unitsUsed.getText().toString()));
+                    Hydro tempHydro = new Hydro(billID.getText().toString(),billDate.getText().toString(),"HYDRO",50.5,agencyName.getText().toString(),Integer.parseInt(unitsUsed.getText().toString()));
 
              customerObj.addBill(tempHydro.getBillId(),tempHydro);
               //  DataManager.getInstance().addBill(customerObj,tempHydro);
@@ -185,6 +203,9 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    
+
+
 
                 }
             });
