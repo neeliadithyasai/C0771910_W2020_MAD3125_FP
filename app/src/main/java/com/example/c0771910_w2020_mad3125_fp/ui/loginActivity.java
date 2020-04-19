@@ -90,7 +90,7 @@ public class loginActivity extends AppCompatActivity {
             username.setError("Enter Email ID");
             return;
         }
-        if(userName.equals("admin") && passWord.equals("admin@123")) {
+        if(userName.equals("admin@gmail.com") && passWord.equals("admin@123")) {
 
             if (rememberme.isChecked()) {
                 loginPrefsEditor.putBoolean("saveLogin", true);

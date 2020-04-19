@@ -20,16 +20,34 @@ public class DataManager
 
     public void loaddata() {
 
-        Hydro H1 = new Hydro("HYD001","28/07/1995","HYDRO",455.0,"rogers",25);
-        Mobile M1 = new Mobile("MOB001","28/07/1995","MOBILE",500.5,"iphone", "0989789687","wakeup",15,24);
+        Hydro H1 = new Hydro("HYD001","28/07/2019","HYDRO",455.0,"Rogers",25);
+        Mobile M1 = new Mobile("MOB001","28/07/2018","MOBILE",500.5,"iphone", "0989789687","wakeup",15,24);
         Internet I1 = new Internet("INT001","25/01/2019","INTERNET",75.0,"Rogers",15.0);
-        Customer cust1 = new Customer("001","oliver","queen","oliverq@gmail.com");
+
+
+        Hydro H2 = new Hydro("HYD002","2/05/2019","HYDRO",156.0,"Fido",25);
+        Mobile M2 = new Mobile("MOB002","28/07/2020","MOBILE",50.5,"Samsung s10", "4675897864","ultra data",15,24);
+        Internet I2 = new Internet("INT002","25/01/2019","INTERNET",75.0,"Rogers",15.0);
+
+        Mobile M3 = new Mobile("MOB003","21/08/2020","MOBILE",150.5,"Blackberry Q10", "9097858678","ultra saver",15,50);
+        Internet I3 = new Internet("INT003","25/01/2019","INTERNET",175.0,"Freedom",15.0);
+
+        Customer cust1 = new Customer("C001","oliver","queen","oliverq@gmail.com");
+        Customer cust2 = new Customer("C002","Barry","Allen","barryallen@gmail.com");
+        Customer cust3 = new Customer("C003","Tommy","shelby","shelby.t@gmail.com");
 
         cust1.addBill(H1.getBillId(), H1);
         cust1.addBill(M1.getBillId(),M1);
         cust1.addBill(I1.getBillId(),I1);
 
+        cust2.addBill(H2.getBillId(), H2);
+        cust2.addBill(M2.getBillId(),M2);
+        cust2.addBill(I2.getBillId(),I2);
+
+  
+
         customers.add(cust1);
+        customers.add(cust2);
 
     }
 
