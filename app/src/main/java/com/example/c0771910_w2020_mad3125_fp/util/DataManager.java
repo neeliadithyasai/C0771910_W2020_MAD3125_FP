@@ -44,10 +44,13 @@ public class DataManager
         cust2.addBill(M2.getBillId(),M2);
         cust2.addBill(I2.getBillId(),I2);
 
-  
+        cust3.addBill(M3.getBillId(),M3);
+        cust3.addBill(I3.getBillId(),I3);
+
 
         customers.add(cust1);
         customers.add(cust2);
+        customers.add(cust3);
 
     }
 
