@@ -203,7 +203,21 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    
+                    Intent hIntent = getIntent();
+                    Customer customerObj = hIntent.getParcelableExtra("CustomerOBJ");
+
+                    Internet tempInternet = new Internet(billID.getText().toString(),billDate.getText().toString(),spbillType.getSelectedItem().toString(),Double.parseDouble(billAmount.getText().toString()),agencyName.getText().toString(),Double.parseDouble(dataused.getText().toString()));
+
+
+
+                    customerObj.addBill(tempInternet.getBillId(),tempInternet);
+
+
+                    Intent intent3 = new Intent(addBillActivity.this,detailsDisplayActivity.class);
+
+                    intent3.putExtra("CustomerOBJ",customerObj);
+
+                    startActivity(intent3);
 
 
 
