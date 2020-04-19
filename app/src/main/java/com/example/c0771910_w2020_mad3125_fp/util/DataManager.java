@@ -32,7 +32,7 @@ public class DataManager
         Mobile M3 = new Mobile("MOB003","21/08/2020","MOBILE",150.5,"Blackberry Q10", "9097858678","ultra saver",15,50);
         Internet I3 = new Internet("INT003","25/01/2019","INTERNET",175.0,"Freedom",15.0);
 
-        Customer cust1 = new Customer("C001","oliver","queen","oliverq@gmail.com");
+        Customer cust1 = new Customer("C001","Oliver","queen","oliverq@gmail.com");
         Customer cust2 = new Customer("C002","Barry","Allen","barryallen@gmail.com");
         Customer cust3 = new Customer("C003","Tommy","shelby","shelby.t@gmail.com");
 
