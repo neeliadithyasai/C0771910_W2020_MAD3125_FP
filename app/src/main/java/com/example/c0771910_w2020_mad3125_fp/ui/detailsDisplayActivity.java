@@ -69,7 +69,9 @@ public class detailsDisplayActivity extends AppCompatActivity {
             Intent mIntent = getIntent();
             Customer customerObj = mIntent.getParcelableExtra("CustomerOBJ");
 
-            billsArrayList = customerObj.getBills();
+         billsArrayList = customerObj.getBills();
+
+//       billsArrayList = DataManager.getInstance().getcstbills(customerObj);
 
 
             BillsAdapter = new billsAdapter(billsArrayList);
@@ -83,7 +85,7 @@ public class detailsDisplayActivity extends AppCompatActivity {
             CustId.setText(customerObj.getFullName());
             custName.setText(customerObj.getFirstName());
             custEmailId.setText(customerObj.getEmailId());
-            custTotal.setText(String.valueOf(customerObj.getBills().size()));
+            custTotal.setText(String.valueOf(customerObj.getTotalAmount()));
 
 
 
@@ -119,16 +121,5 @@ public class detailsDisplayActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
-
-//    public void onActivityResult(int requestCode,int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (resultCode == Activity.RESULT_OK) {
-//            Customer tempobj = data.getParcelableExtra("CustomerOBJ");
-//
-//            billsArrayList = tempobj.getBills();
-//            fillData();
-//        }
-//    }
 
 }

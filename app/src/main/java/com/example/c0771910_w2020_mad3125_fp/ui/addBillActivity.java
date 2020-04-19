@@ -154,14 +154,16 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
 
                     Hydro tempHydro = new Hydro(billID.getText().toString(),billDate.getText().toString(),"hydro",50.5,agencyName.getText().toString(),Integer.parseInt(unitsUsed.getText().toString()));
 
-                    //customerObj.addBill(tempHydro.getBillId(),tempHydro);
-                   DataManager.getInstance().addBill(customerObj,tempHydro);
+             customerObj.addBill(tempHydro.getBillId(),tempHydro);
+              //  DataManager.getInstance().addBill(customerObj,tempHydro);
 //
-//                    Intent intent3 = new Intent();
-//                    intent3.putExtra("CustomerOBJ",customerObj);
-//                    setResult(RESULT_OK,intent3);
+                Intent intent3 = new Intent(addBillActivity.this,detailsDisplayActivity.class);
+                   // Intent intent3 = new Intent();
+                    intent3.putExtra("CustomerOBJ",customerObj);
+                   // setResult(RESULT_OK,intent3);
+                    startActivity(intent3);
 
-                    finish();
+                  // finish();
 
 
 
