@@ -69,11 +69,11 @@ public class loginActivity extends AppCompatActivity {
             username.setText(loginPreferences.getString("username", ""));
             password.setText(loginPreferences.getString("password", ""));
             rememberme.setChecked(true);
-            Toast.makeText(loginActivity.this,"ON",Toast.LENGTH_LONG).show();
+            Toast.makeText(loginActivity.this,"Remember me ON",Toast.LENGTH_LONG).show();
         }
         else
         {
-            Toast.makeText(loginActivity.this,"OFF",Toast.LENGTH_LONG).show();
+            Toast.makeText(loginActivity.this,"Remember  me OFF",Toast.LENGTH_LONG).show();
         }
 
 
