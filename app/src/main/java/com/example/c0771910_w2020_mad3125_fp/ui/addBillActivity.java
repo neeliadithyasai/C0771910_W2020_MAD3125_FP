@@ -255,25 +255,36 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
             unitsUsed.setVisibility(View.INVISIBLE);
             agencyName.setVisibility(View.VISIBLE);
             agencyName.setHint("ENTER PROVIDER NAME");
-//            unitsUsed.setHint("ENTER DATA USED");
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent hIntent = getIntent();
-                    Customer customerObj = hIntent.getParcelableExtra("CustomerOBJ");
-
-                    Internet tempInternet = new Internet(billID.getText().toString(),billDate.getText().toString(),spbillType.getSelectedItem().toString(),Double.parseDouble(billAmount.getText().toString()),agencyName.getText().toString(),Double.parseDouble(dataused.getText().toString()));
 
 
+                    if(billID.getText().toString().matches(""))
+                    {
+                        billID.setError("please enter bill Id");
+                    }else if(billDate.getText().toString().matches(""))
+                    {
+                        billDate.setError("please enter bill date");
 
-                    customerObj.addBill(tempInternet.getBillId(),tempInternet);
+                    } else if(billAmount.getText().toString().matches(""))
+                    {
+                        billAmount.setError("please enter bill amount");
 
+                    }else {
 
-                    Intent intent3 = new Intent(addBillActivity.this,detailsDisplayActivity.class);
+                        Intent hIntent = getIntent();
+                        Customer customerObj = hIntent.getParcelableExtra("CustomerOBJ");
 
-                    intent3.putExtra("CustomerOBJ",customerObj);
+                        Internet tempInternet = new Internet(billID.getText().toString(), billDate.getText().toString(), spbillType.getSelectedItem().toString(), Double.parseDouble(billAmount.getText().toString()), agencyName.getText().toString(), Double.parseDouble(dataused.getText().toString()));
+                        customerObj.addBill(tempInternet.getBillId(), tempInternet);
+                        Intent intent3 = new Intent(addBillActivity.this, detailsDisplayActivity.class);
 
-                    startActivity(intent3);
+                        intent3.putExtra("CustomerOBJ", customerObj);
+
+                        startActivity(intent3);
+
+                    }
 
 
 
