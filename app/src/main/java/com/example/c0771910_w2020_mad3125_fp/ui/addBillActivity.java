@@ -199,29 +199,25 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
             unitsUsed.setVisibility(View.VISIBLE);
             agencyName.setVisibility(View.VISIBLE);
             agencyName.setHint("ENTER AGENCY NAME");
-//            unitsUsed.setHint("ENTER UNITS USED");
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+
+                    
                     Intent hIntent = getIntent();
                     Customer customerObj = hIntent.getParcelableExtra("CustomerOBJ");
 
-
                     Hydro tempHydro = new Hydro(billID.getText().toString(),billDate.getText().toString(),"HYDRO",50.5,agencyName.getText().toString(),Integer.parseInt(unitsUsed.getText().toString()));
-
-             customerObj.addBill(tempHydro.getBillId(),tempHydro);
-              //  DataManager.getInstance().addBill(customerObj,tempHydro);
-//
-                Intent intent3 = new Intent(addBillActivity.this,detailsDisplayActivity.class);
-                   // Intent intent3 = new Intent();
+                    customerObj.addBill(tempHydro.getBillId(),tempHydro);
+                     Intent intent3 = new Intent(addBillActivity.this,detailsDisplayActivity.class);
                     intent3.putExtra("CustomerOBJ",customerObj);
-                   // setResult(RESULT_OK,intent3);
                     startActivity(intent3);
 
 
 
 
-                  // finish();
+
 
 
 
