@@ -9,7 +9,7 @@ public abstract class Bill implements Idisplay, Serializable {
     private String billId;
     private String billDate;
     private String billType;
-    private Double billAmount;
+  Double billAmount = 0.0;
 
     public Bill(String billId, String billDate, String billType, Double billAmount) {
         this.billId = billId;

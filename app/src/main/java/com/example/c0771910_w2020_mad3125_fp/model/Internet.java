@@ -26,5 +26,20 @@ public class Internet extends Bill {
         super(billId, billDate, billType, billAmount);
         this.providerName = providerName;
         this.internetUsed = internetUsed;
+        this.billAmount = billCalculate();
     }
+
+
+    public Double billCalculate(){
+        double totalBillAmount= 0.0;
+        if( internetUsed  < 10){
+            totalBillAmount = 3 * internetUsed ;
+        }
+        else {
+            totalBillAmount= 3.5 * internetUsed ;
+        }
+        return totalBillAmount;
+
+    }
+
 }

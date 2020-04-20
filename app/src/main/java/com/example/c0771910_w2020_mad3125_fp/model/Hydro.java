@@ -9,6 +9,7 @@ public class Hydro extends Bill {
         super(billId, billDate, billType, billAmount);
         this.agencyName = agencyName;
         this.unitsConsumed = unitsConsumed;
+        this.billAmount = billCalculate();
     }
 
     public String getAgencyName() {
@@ -25,5 +26,20 @@ public class Hydro extends Bill {
 
     public void setUnitsConsumed(int unitsConsumed) {
         this.unitsConsumed = unitsConsumed;
+    }
+
+
+
+    public Double billCalculate(){
+        double totalBillAmount = 0.0;
+        if (unitsConsumed < 10)
+        {
+            totalBillAmount = 1.5 * unitsConsumed;
+        }
+        else
+        {
+            totalBillAmount = 2 * unitsConsumed;
+        }
+        return totalBillAmount;
     }
 }

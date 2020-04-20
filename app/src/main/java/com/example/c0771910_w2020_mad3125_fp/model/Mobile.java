@@ -15,6 +15,7 @@ public class Mobile extends Bill{
         this.planName = planName;
         this.internetUsed = internetUsed;
         this.minutesUsed = minutesUsed;
+        this.billAmount = billCalculate();
 
 
     }
@@ -57,5 +58,10 @@ public class Mobile extends Bill{
 
     public void setMinutesUsed(int minutesUsed) {
         this.minutesUsed = minutesUsed;
+    }
+    public Double billCalculate(){
+        double totalBillAmount = 0.0;
+        totalBillAmount = (this.internetUsed ) * 25 + (this.minutesUsed) * 0.2;
+        return totalBillAmount;
     }
 }

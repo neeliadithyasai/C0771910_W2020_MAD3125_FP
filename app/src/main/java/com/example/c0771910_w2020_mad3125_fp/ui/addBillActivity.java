@@ -44,7 +44,6 @@
         private Spinner spbillType;
         private TextView mobilenumber;
         private TextView dataused;
-        private TextView billAmount;
         private FloatingActionButton fab;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +63,7 @@
             mobilenumber = findViewById(R.id.mobilenumberInputEditText);
             dataused = findViewById(R.id.datausedInputEditText);
             spbillType = findViewById(R.id.spinnertype);
-            billAmount = findViewById(R.id.billAmountInputEditText);
+
 
 
 
@@ -147,10 +146,6 @@
                         {
                             billDate.setError("please enter bill date");
 
-                        } else if(billAmount.getText().toString().matches(""))
-                        {
-                            billAmount.setError("please enter bill amount");
-
                         }
                         else if(manufacturerName.getText().toString().matches(""))
                         {
@@ -172,7 +167,7 @@
                         }
                         else if(StringExtension.mobileValidation(mobilenumber.getText().toString()) == true) {
 
-                            Mobile tempmobile = new Mobile(billID.getText().toString(), billDate.getText().toString(), spbillType.getSelectedItem().toString(), Double.parseDouble(billAmount.getText().toString()), manufacturerName.getText().toString(), mobilenumber.getText().toString(), planName.getText().toString(), Integer.parseInt(dataused.getText().toString()), Integer.parseInt(minutesUsed.getText().toString()));
+                            Mobile tempmobile = new Mobile(billID.getText().toString(), billDate.getText().toString(), spbillType.getSelectedItem().toString(), 0.0, manufacturerName.getText().toString(), mobilenumber.getText().toString(), planName.getText().toString(), Integer.parseInt(dataused.getText().toString()), Integer.parseInt(minutesUsed.getText().toString()));
 
                             customerObj.addBill(tempmobile.getBillId(), tempmobile);
 
@@ -211,10 +206,6 @@
                         {
                             billDate.setError("please enter bill date");
 
-                        } else if(billAmount.getText().toString().matches(""))
-                        {
-                            billAmount.setError("please enter bill amount");
-
                         }else if(agencyName.getText().toString().matches(""))
                         {
                             agencyName.setError("please enter agency name:");
@@ -227,7 +218,7 @@
                             Intent hIntent = getIntent();
                             Customer customerObj = hIntent.getParcelableExtra("CustomerOBJ");
 
-                            Hydro tempHydro = new Hydro(billID.getText().toString(), billDate.getText().toString(), "HYDRO", Double.parseDouble(billAmount.getText().toString()), agencyName.getText().toString(), Integer.parseInt(unitsUsed.getText().toString()));
+                            Hydro tempHydro = new Hydro(billID.getText().toString(), billDate.getText().toString(), "HYDRO", 0.0, agencyName.getText().toString(), Integer.parseInt(unitsUsed.getText().toString()));
                             customerObj.addBill(tempHydro.getBillId(), tempHydro);
                             Intent intent3 = new Intent(addBillActivity.this, detailsDisplayActivity.class);
                             intent3.putExtra("CustomerOBJ", customerObj);
@@ -267,11 +258,7 @@
                         {
                             billDate.setError("please enter bill date");
 
-                        } else if(billAmount.getText().toString().matches(""))
-                        {
-                            billAmount.setError("please enter bill amount");
-
-                        }else if(agencyName.getText().toString().matches(""))
+                        } else if(agencyName.getText().toString().matches(""))
                         {
                             agencyName.setError("please enter provider name");
 
@@ -284,7 +271,7 @@
                             Intent hIntent = getIntent();
                             Customer customerObj = hIntent.getParcelableExtra("CustomerOBJ");
 
-                            Internet tempInternet = new Internet(billID.getText().toString(), billDate.getText().toString(), spbillType.getSelectedItem().toString(), Double.parseDouble(billAmount.getText().toString()), agencyName.getText().toString(), Double.parseDouble(dataused.getText().toString()));
+                            Internet tempInternet = new Internet(billID.getText().toString(), billDate.getText().toString(), spbillType.getSelectedItem().toString(), 0.0, agencyName.getText().toString(), Double.parseDouble(dataused.getText().toString()));
                             customerObj.addBill(tempInternet.getBillId(), tempInternet);
                             Intent intent3 = new Intent(addBillActivity.this, detailsDisplayActivity.class);
 
