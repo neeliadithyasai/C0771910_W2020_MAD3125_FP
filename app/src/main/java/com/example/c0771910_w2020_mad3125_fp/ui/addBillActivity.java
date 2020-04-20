@@ -136,10 +136,18 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     Intent mIntent = getIntent();
                     Customer customerObj = mIntent.getParcelableExtra("CustomerOBJ");
 
-                    if(StringExtension.mobileValidation(mobilenumber.getText().toString()) == true) {
+                    if(billID.getText().toString().matches(""))
+                    {
+                        billID.setError("please enter bill Id");
+                    }else if(billDate.getText().toString().matches(""))
+                    {
+                        billDate.setError("please enter bill Id");
+
+                    } else if(StringExtension.mobileValidation(mobilenumber.getText().toString()) == true) {
 
                         Mobile tempmobile = new Mobile(billID.getText().toString(), billDate.getText().toString(), spbillType.getSelectedItem().toString(), Double.parseDouble(billAmount.getText().toString()), manufacturerName.getText().toString(), mobilenumber.getText().toString(), planName.getText().toString(), Integer.parseInt(dataused.getText().toString()), Integer.parseInt(minutesUsed.getText().toString()));
 
