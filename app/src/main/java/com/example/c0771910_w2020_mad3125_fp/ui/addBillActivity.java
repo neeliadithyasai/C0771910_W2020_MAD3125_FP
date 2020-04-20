@@ -219,7 +219,7 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
                         Intent hIntent = getIntent();
                         Customer customerObj = hIntent.getParcelableExtra("CustomerOBJ");
 
-                        Hydro tempHydro = new Hydro(billID.getText().toString(), billDate.getText().toString(), "HYDRO", 50.5, agencyName.getText().toString(), Integer.parseInt(unitsUsed.getText().toString()));
+                        Hydro tempHydro = new Hydro(billID.getText().toString(), billDate.getText().toString(), "HYDRO", Double.parseDouble(billAmount.getText().toString()), agencyName.getText().toString(), Integer.parseInt(unitsUsed.getText().toString()));
                         customerObj.addBill(tempHydro.getBillId(), tempHydro);
                         Intent intent3 = new Intent(addBillActivity.this, detailsDisplayActivity.class);
                         intent3.putExtra("CustomerOBJ", customerObj);
