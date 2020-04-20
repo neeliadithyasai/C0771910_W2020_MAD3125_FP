@@ -163,7 +163,11 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
 
                     }else if(dataused.getText().toString().matches(""))
                     {
-                        dataused.setError("please enter mobile number");
+                        dataused.setError("please enter data used");
+
+                    }else if(minutesUsed.getText().toString().matches(""))
+                    {
+                        minutesUsed.setError("please enter minutes used");
 
                     }
                     else if(StringExtension.mobileValidation(mobilenumber.getText().toString()) == true) {
