@@ -204,15 +204,27 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
                 public void onClick(View v) {
 
 
-                    
-                    Intent hIntent = getIntent();
-                    Customer customerObj = hIntent.getParcelableExtra("CustomerOBJ");
+                    if(billID.getText().toString().matches(""))
+                    {
+                        billID.setError("please enter bill Id");
+                    }else if(billDate.getText().toString().matches(""))
+                    {
+                        billDate.setError("please enter bill date");
 
-                    Hydro tempHydro = new Hydro(billID.getText().toString(),billDate.getText().toString(),"HYDRO",50.5,agencyName.getText().toString(),Integer.parseInt(unitsUsed.getText().toString()));
-                    customerObj.addBill(tempHydro.getBillId(),tempHydro);
-                     Intent intent3 = new Intent(addBillActivity.this,detailsDisplayActivity.class);
-                    intent3.putExtra("CustomerOBJ",customerObj);
-                    startActivity(intent3);
+                    } else if(billAmount.getText().toString().matches(""))
+                    {
+                        billAmount.setError("please enter bill amount");
+
+                    }else {
+                        Intent hIntent = getIntent();
+                        Customer customerObj = hIntent.getParcelableExtra("CustomerOBJ");
+
+                        Hydro tempHydro = new Hydro(billID.getText().toString(), billDate.getText().toString(), "HYDRO", 50.5, agencyName.getText().toString(), Integer.parseInt(unitsUsed.getText().toString()));
+                        customerObj.addBill(tempHydro.getBillId(), tempHydro);
+                        Intent intent3 = new Intent(addBillActivity.this, detailsDisplayActivity.class);
+                        intent3.putExtra("CustomerOBJ", customerObj);
+                        startActivity(intent3);
+                    }
 
 
 
