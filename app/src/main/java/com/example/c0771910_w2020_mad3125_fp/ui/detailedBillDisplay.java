@@ -31,7 +31,6 @@ public class detailedBillDisplay extends AppCompatActivity {
         Intent mIntent = getIntent();
         Bill billObj = (Bill) mIntent.getSerializableExtra("billOBJ");
 
-//        billtext.setText(billObj.getBillId().toUpperCase());
 
         if(billObj.getBillType().matches("HYDRO"))
         {

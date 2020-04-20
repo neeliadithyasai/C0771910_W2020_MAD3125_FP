@@ -47,7 +47,6 @@ public class detailsDisplayActivity extends AppCompatActivity {
 
 
 
-//        custTotal.setText(String.valueOf(customerObj.getTotalAmount()));
 
         fillData();
 
@@ -71,7 +70,6 @@ public class detailsDisplayActivity extends AppCompatActivity {
 
          billsArrayList = customerObj.getBills();
 
-//       billsArrayList = DataManager.getInstance().getcstbills(customerObj);
 
 
             BillsAdapter = new billsAdapter(billsArrayList);
