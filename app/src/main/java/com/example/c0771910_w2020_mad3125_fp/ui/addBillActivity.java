@@ -187,6 +187,9 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
                    // setResult(RESULT_OK,intent3);
                     startActivity(intent3);
 
+
+
+
                   // finish();
 
 
@@ -224,6 +227,7 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
                     intent3.putExtra("CustomerOBJ",customerObj);
 
                     startActivity(intent3);
+
 
 
 

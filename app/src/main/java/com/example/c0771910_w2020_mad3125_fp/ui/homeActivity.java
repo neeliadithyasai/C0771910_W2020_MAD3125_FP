@@ -1,10 +1,12 @@
 package com.example.c0771910_w2020_mad3125_fp.ui;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -67,9 +69,20 @@ public class homeActivity extends AppCompatActivity {
                 return true;
             case R.id.menu2:
 
-//                Intent intent = new Intent(homeActivity.this, loginActivity.class);
-//                startActivity(intent);
-               finish();
+                new AlertDialog.Builder(homeActivity.this)
+                        .setTitle("logout!!")
+                        .setMessage("Are you sure want to logout?")
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        })
+
+                        // A null listener allows the button to dismiss the dialog and take no further action.
+                        .setNegativeButton(android.R.string.no, null)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
