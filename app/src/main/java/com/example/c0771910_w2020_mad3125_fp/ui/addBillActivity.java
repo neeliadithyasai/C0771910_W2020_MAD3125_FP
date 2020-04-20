@@ -145,18 +145,23 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
                         billID.setError("please enter bill Id");
                     }else if(billDate.getText().toString().matches(""))
                     {
-                        billDate.setError("please enter bill Id");
+                        billDate.setError("please enter bill date");
 
                     } else if(billAmount.getText().toString().matches(""))
                     {
-                        billAmount.setError("please enter bill Id");
+                        billAmount.setError("please enter bill amount");
 
                     }
                     else if(manufacturerName.getText().toString().matches(""))
                     {
-                        manufacturerName.setError("please enter bill Id");
+                        manufacturerName.setError("please enter manufacturer name");
 
-                    } else if(StringExtension.mobileValidation(mobilenumber.getText().toString()) == true) {
+                    }
+                    else if(mobilenumber.getText().toString().matches(""))
+                    {
+                        mobilenumber.setError("please enter mobile number");
+
+                    }else if(StringExtension.mobileValidation(mobilenumber.getText().toString()) == true) {
 
                         Mobile tempmobile = new Mobile(billID.getText().toString(), billDate.getText().toString(), spbillType.getSelectedItem().toString(), Double.parseDouble(billAmount.getText().toString()), manufacturerName.getText().toString(), mobilenumber.getText().toString(), planName.getText().toString(), Integer.parseInt(dataused.getText().toString()), Integer.parseInt(minutesUsed.getText().toString()));
 
