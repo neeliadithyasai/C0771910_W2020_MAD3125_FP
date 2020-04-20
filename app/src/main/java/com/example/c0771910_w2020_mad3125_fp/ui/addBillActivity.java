@@ -219,6 +219,10 @@ public class addBillActivity extends AppCompatActivity implements AdapterView.On
                     {
                         agencyName.setError("please enter agency name:");
 
+                    }else if(unitsUsed.getText().toString().matches(""))
+                    {
+                        unitsUsed.setError("please enter agency name:");
+
                     }else {
                         Intent hIntent = getIntent();
                         Customer customerObj = hIntent.getParcelableExtra("CustomerOBJ");
